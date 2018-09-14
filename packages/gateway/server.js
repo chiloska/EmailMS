@@ -1,5 +1,5 @@
 const app = require('express')();
-const {ApolloServer, gql}= require('apollo-server-express');
+const { ApolloServer, gql } = require('apollo-server-express');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 
@@ -24,11 +24,11 @@ server.applyMiddleware({ app });
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res)=>{
-    res.send('Hello Gateway');
+app.get('/', (req, res) => {
+  res.send('Hello Gateway');
 });
 
-app.listen(PORT, ()=>{
-    console.log(`Listening API Gateway in port ${PORT}`);
-    console.log(`Listening Graphql endpoint in http://localhost:${PORT}${server.graphqlPath}`)
+app.listen(PORT, () => {
+  console.log(`Listening API Gateway in port ${PORT}`);
+  console.log(`Listening Graphql endpoint in http://localhost:${PORT}${server.graphqlPath}`)
 });
